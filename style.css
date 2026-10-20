@@ -118,18 +118,33 @@ kbd { background: #fff; border: 2px solid #bbb; border-bottom-width: 4px; border
 
 /* ---------- Touch ---------- */
 #touch { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+
+/* จอยสติ๊ก: ย้ายไปขวาล่าง + สีฟ้า */
 #joystick {
-  position: absolute; left: 24px; bottom: 24px; width: 130px; height: 130px; border-radius: 50%;
-  background: rgba(255,255,255,.35); border: 3px solid rgba(255,255,255,.85); pointer-events: auto; touch-action: none;
+  position: absolute; right: 24px; bottom: 24px; width: 130px; height: 130px; border-radius: 50%;
+  background: rgba(41, 182, 246, 0.30); border: 3px solid #81d4fa;
+  pointer-events: auto; touch-action: none;
 }
-#stick { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; border-radius: 50%; background: #fff; transform: translate(-50%, -50%); box-shadow: 0 3px 0 rgba(0,0,0,.2); }
+#stick {
+  position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; border-radius: 50%;
+  background: #29b6f6; transform: translate(-50%, -50%);
+  box-shadow: 0 3px 0 #0277bd, inset 0 -4px 0 rgba(0,0,0,.12);
+}
+.joyLabel {
+  position: absolute; top: -36px; left: 50%; transform: translateX(-50%);
+  background: #29b6f6; color: #fff; font-size: 16px; font-weight: 600;
+  padding: 2px 14px; border-radius: 12px; white-space: nowrap;
+  box-shadow: 0 3px 0 #0277bd; pointer-events: none;
+}
+
+/* ปุ่มกระโดด/ปา: ย้ายไปซ้ายล่าง */
 .tbtn {
   position: absolute; bottom: 30px; width: 84px; height: 84px; border-radius: 50%; border: none;
   font-family: inherit; font-size: 14px; background: rgba(255,255,255,.88); pointer-events: auto; touch-action: none;
   box-shadow: 0 4px 0 rgba(0,0,0,.2);
 }
-#btnJump { right: 24px; }
-#btnThrow { right: 122px; }
+#btnJump { left: 24px; }
+#btnThrow { left: 122px; }
 
 @media (max-width: 700px) {
   #stagePanel { font-size: 12px; max-width: 48vw; }
