@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sugar-Free Valley – ผจญภัยหุบเขาไร้หวาน</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- ===== HUD ===== -->
+  <div id="hud" class="hidden">
+    <div id="topbar">
+      <div class="panel" id="scorePanel">
+        <div class="label">❤️ พลังสุขภาพ <span id="scoreText">100</span></div>
+        <div class="bar"><div id="scoreFill"></div></div>
+        <div class="sugar" id="sugarBox">🥄 น้ำตาลวันนี้: <b id="sugarText">0</b> / 6 ช้อนชา</div>
+      </div>
+      <div class="panel" id="stagePanel">
+        <div id="stageName">ด่าน 1</div>
+        <ul id="missionList"></ul>
+      </div>
+    </div>
+    <div id="effects"></div>
+    <div id="bossPanel" class="panel hidden">
+      <div class="label">👾 ยักษ์น้ำตาล</div>
+      <div class="bar boss"><div id="bossFill"></div></div>
+      <div class="ammo">💧 กระสุนสุขภาพ: <b id="ammoText">0</b></div>
+    </div>
+    <div id="toast" class="hidden"></div>
+    <div id="hint"></div>
+  </div>
+
+  <div id="sugarOverlay"></div>
+  <div id="floaters"></div>
+
+  <!-- ===== Touch controls ===== -->
+  <div id="touch" class="hidden">
+    <div id="joystick"><div id="stick"></div></div>
+    <button id="btnJump" class="tbtn">⬆️<br>กระโดด</button>
+    <button id="btnThrow" class="tbtn">💧<br>ปา</button>
+  </div>
+
+  <!-- ===== Modal ===== -->
+  <div id="modal" class="hidden">
+    <div class="card">
+      <div id="modalBody"></div>
+      <div id="modalButtons"></div>
+    </div>
+  </div>
+
+  <!-- ===== Start screen ===== -->
+  <div id="startScreen" class="screen">
+    <div class="logo">🥤🚫</div>
+    <h1>Sugar-Free Valley</h1>
+    <h2>ผจญภัยหุบเขาไร้หวาน</h2>
+    <p>ช่วยกันปกป้องหุบเขาจาก <b>ยักษ์น้ำตาล</b>! กินอาหารครบ 5 หมู่ ดื่มน้ำเปล่า ออกกำลังกาย
+       และอ่านฉลากให้เป็น เพื่อเป็น <b>Healthy Champion</b></p>
+    <div id="badgeNote" class="hidden">🏅 คุณเคยได้รับเหรียญ Healthy Champion แล้ว!</div>
+    <button id="btnStart" class="btn big">▶ เริ่มผจญภัย</button>
+    <div class="controls">
+      <div>🎮 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> หรือลูกศร = เดิน &nbsp; <kbd>Space</kbd> = กระโดด</div>
+      <div>💧 <kbd>F</kbd> หรือคลิกเมาส์ = ปา (ด่านบอส) &nbsp; <kbd>P</kbd> = พักเกม</div>
+      <div>📱 แท็บเล็ต: จอยสติ๊กซ้ายล่าง + ปุ่มขวาล่าง</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
